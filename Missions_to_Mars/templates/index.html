@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<!-- Title of the page -->
+	<title>Mission To Mars</title>
+	
+	<!-- Bring in our bootstrap stylesheet -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!--JS Libraries-->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	
+	<style>
+		body{
+			background:#00008B;
+			color: white;
+		}
+		
+		table{
+			border-color:white;
+		}
+	</style>
+</head>
+
+<body background:#191970;>
+    
+	<!-- Creating the container to hold the page -->
+	<div class="container-fluid">
+	
+		<!-- Adding a break so that the first element has a distance from the top -->
+		<br>
+		
+		<!-- Creating the first row -->
+		<div class='row' >
+			
+			<!-- Column -->
+			<div class='col-md-12' >
+			
+				<!-- Card container -->
+				<div class="card border-secondary text-white mb-3" style="max-width: 100%; background-color:transparent;">
+				
+					<!-- Card Body -->
+					<div class='card-body'>
+		
+						<div class="jumbotron text-center" style='background-color:transparent;, padding: 40px;'>
+							
+							<!-- Page Heading -->
+							<h1 class='card-title'><strong>Mission To Mars</strong></h1>
+							
+							<!-- Break between the Heading and the button -->
+							<br>
+							
+							<!-- Button -->
+							<p><a class="btn btn-outline-info btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+
+						<!-- Jumbo Tag -->
+						</div>
+					  
+					<!-- Card body tag -->
+					</div>
+
+				<!-- Card tag -->
+				</div>
+			  
+			<!-- Column tag -->
+			</div>
+			
+		<!-- First row tag -->
+		</div>
+	
+		
+		<!-- News Row -->
+		<div class='row'>
+		
+			<!-- Column -->
+			<div class='col-md-12'>
+			
+				<!-- Card container -->
+				<div class='card border-secondary' style='max-width:100%; background-color:transparent;'>
+				
+					<!-- Card body -->
+					<div class='card-body'>
+					
+						<!-- Jumbotron class -->
+						<div class="jumbotron" style='background-color:transparent;'>
+					
+							<!-- Card Heading -->
+							<h2 class='card-title'>Latest Mars News</h2>
+							
+							<!-- News Title -->
+							<p>{{ mars.news_title }}</p>
+							
+							<!-- News Body -->
+							<p>{{ mars.news_body }}</p>
+						
+						<!-- jumbo tag -->
+						</div>
+						
+					<!-- body tag -->
+					</div>
+				
+				<!-- card tag -->
+				</div>
+			
+			<!-- Column Tag -->
+			</div>
+		
+		<!-- News tag -->
+		</div>
+		
+		<!-- Break -->
+		<br>
+		
+		<!-- Featured Items Row -->
+		<div class='row'>
+		
+			<!-- Column for Image -->
+			<div class='col-md-6'>
+			
+				<!-- Card container -->
+				<div class='card border-secondary' style='max-width:100%; background-color:transparent;'>
+				
+					<!-- Card body -->
+					<div class='card-body'>
+					
+						<!-- Jumbotron class -->
+						<div class="jumbotron" style='background-color:transparent;'>
+					
+							<!-- Card Heading -->
+							<h2 class='card-title'>Featured Mars Image</h2>
+							
+							<!-- Featured Image Link -->
+							<img class='card-img' src={{ mars.featured_img_url }} alt='Featured Image'>
+							
+						
+						<!-- jumbo tag -->
+						</div>
+						
+					<!-- body tag -->
+					</div>
+				
+				<!-- card tag -->
+				</div>
+			
+			<!-- Column Tag -->
+			</div>
+			
+			<!-- Break -->
+			<br>
+			
+			<!-- Column for Weather -->
+			<div class='col-md-6'>
+			
+				<br>
+	
+				<!-- Card for Weather -->
+				<div class='card border-secondary' style='max-width:100%; background-color:transparent;'>
+				
+					<!-- Card body -->
+					<div class='card-body'>
+				
+						<!-- Card Title -->
+						<h2 class='card-title'>Mars Weather</h2>
+						
+						<!-- Mars Weather -->
+						<p>{{ mars.mars_weather }}</p>
+						
+					<!-- Body Tag -->
+					</div>
+				
+				<!-- Card Tag Weather -->
+				</div>
+				
+				<br>
+				
+				<!-- Card for Table -->
+				<div class='card border-secondary' style='max-width:100%; background-color:transparent;'>
+				
+					<!-- Card Body -->
+					<div class='card-body'>
+					
+						<h2 class='card-title'>Mars Facts</h2>
+						
+						<p>{{ mars.mars_table | safe }}</p>
+						
+					<!-- Body Tag -->
+					</div>
+					
+				<!-- Card Tag Table -->
+				</div>
+			
+			<!-- Column Tag -->
+			</div>
+		
+		<!-- Featured Items tag -->
+		</div>
+		
+		<!-- Break -->
+		<br>
+		
+		<!-- Mars Facts Row -->
+		<div class='row'>
+		
+			<!-- Column -->
+			<div class='col-md-12'>
+			
+				<!-- Card container -->
+				<div class='card border-secondary' style='max-width:100%; background-color:transparent;'>
+				
+					<!-- Card body -->
+					<div class='card-body'>
+					
+						<!-- Jumbotron class -->
+						<div class="jumbotron" style='background-color:transparent;'>
+					
+							<!-- Card Heading -->
+							<h2 class='card-title' style='text-align:center;'><strong>Some Facts About Mars....</strong></h2>
+							
+							<!-- Facts to list -->
+							{% for li in mars.facts %}
+							
+								<p>- {{ li }}</p>
+							
+							{% endfor %}
+						
+						<!-- jumbo tag -->
+						</div>
+						
+					<!-- body tag -->
+					</div>
+				
+				<!-- card tag -->
+				</div>
+			
+			<!-- Column Tag -->
+			</div>
+		
+		<!-- Facts tag -->
+		</div>
+		
+		<!-- Break -->
+		<br>
+		
+		<!-- Mars Hemispshere Row -->
+		<div class='row'>
+		
+			<!-- Column for the Title -->
+			<div class='col-md-12'>
+			
+				<!-- Title for the images below -->
+				<h3 style='text-align:center;'>Mars Hemisphere</h3>
+				
+				<!-- Break -->
+				<br>
+			
+			<!-- Column Tag -->
+			</div>
+	
+		<!-- Loop to go over alll the Images -->
+		{% for hemi in mars.hemisphere %}
+		
+			<!-- Image Column -->
+			<div class='col-md-6'>
+			
+				<!-- Card Container -->
+				<div class='card border-secondary' Style='background-color:transparent;'>
+				
+					<!-- Card Body -->
+					<div class='card-body'>
+					
+					<!-- Jumbotron class -->
+						<div class="jumbotron" style='background-color:transparent;'>
+							
+							<!-- Image Link -->
+							<img class='card-img' src={{ hemi.img_url }} alt='Featured Image'>
+							
+							<!-- Break -->
+							<br>
+							<br>
+							
+							<!-- Image title -->
+							<h4 style='text-align:center;'><strong>{{ hemi.title }}</strong></h4>
+							
+						
+						<!-- jumbo tag -->
+						</div>	
+					
+					<!-- Body Tag -->
+					</div>
+				
+				<!-- Card Tag -->
+				</div>
+				
+			<!-- Break -->
+			<br>
+			
+			<!-- Image Tag -->
+			</div>
+		
+		<!-- For loop end -->
+		{% endfor %}
+
+		<!-- Hemi row tag -->
+		</div>
+	
+	<!-- Container tag	 -->
+	</div>
+	
+	<!-- Break -->
+	<br>
+	
+</body>
+  
+</html>
+  
